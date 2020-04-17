@@ -25,7 +25,6 @@ public class Screen extends JPanel implements KeyListener {
     private Point3d[] thirdCube = new Point3d[8];
     private Point3d[] fourthCube = new Point3d[8];
     private Point3d[] allVertices = new Point3d[32];
-    // Point[] firstDrawableCube = new Point[8];
 
     public Screen() {
         addKeyListener(this);
@@ -73,7 +72,6 @@ public class Screen extends JPanel implements KeyListener {
 
     public void paintComponent(Graphics g) {
         g.clearRect(0, 0, screenWidth, screenHeight);
-        g.drawString(System.currentTimeMillis() + "", 20, 20);
         Point[] drawablePoints = Calculator.map3Dto2d(allVertices, screenWidth, screenHeight, cameraViewAngle);
         for (int i = 0; i < 4; i++)
             paintCube(g, drawablePoints, i);
